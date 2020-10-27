@@ -17,7 +17,6 @@ public class Main {
             sets[i] = new Set(length);
             sets[i] = readSet(sets[i]);
         }
-        printSet(sets[1]);
     }
 
     public static Set readSet(Set set) {

@@ -19,7 +19,7 @@ public class Set {
         }
         return false;
     }
-    static void Union(Set s1 , Set s2){
+    public static void Union(Set s1 , Set s2){
         Set Union = new Set(s1.size + s2.size);
         Union.setSize(0);
         for (int i=0 ; i<s1.size ; i++){
@@ -32,6 +32,18 @@ public class Set {
                 Union.setSize(Union.size+1);
             }
         }
+        Main.printSet(Union);
     }
 
+    public static void Intersection (Set s1 , Set s2){
+        Set Intersection = new Set(s2.size);
+        Intersection.setSize(0);
+        for (int i=0 ; i<s2.size ; i++){
+            if (s1.contains(s2.elements[i])){
+                Intersection.elements[Intersection.size] = s2.elements[i];
+                Intersection.setSize(Intersection.size+1);
+            }
+        }
+        Main.printSet(Intersection);
+    }
 }
