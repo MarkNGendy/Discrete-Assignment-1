@@ -13,7 +13,6 @@ public class Main {
         int noOfSets = in.nextInt();
         Set[] sets = new Set[noOfSets + 1];
         for (int i = 1; i < noOfSets + 1; i++) {
-            
             sets[i] = readSet(sets[i]);
         }
     }
@@ -24,7 +23,7 @@ public class Main {
         for (int i = 0; i < set.size; i++) {
             String s = in.next();
             if (!set.contains(s)) {
-                set.set[i] = s;
+                set.set[set.size] = s;
                 set.setSize(set.size + 1);
             }
         }
