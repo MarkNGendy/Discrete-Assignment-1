@@ -20,10 +20,10 @@ public class Main {
     public static Set readSet(Set set) {
         Scanner in = new Scanner(System.in);
         set.setSize(0);
-        for (int i = 0; i < set.size; i++) {
+        for (int i = 0; i < set.elements.length; i++) {
             String s = in.next();
             if (!set.contains(s)) {
-                set.set[set.size] = s;
+                set.elements[set.size] = s;
                 set.setSize(set.size + 1);
             }
         }

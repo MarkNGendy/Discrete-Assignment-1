@@ -1,13 +1,12 @@
 package com.company;
 
-import java.util.LinkedList;
 
 public class Set {
-    String[] set;
+    String[] elements;
     int size;
 
     public Set(int size) {
-        set = new String[size];
+        elements = new String[size];
     }
 
     public void setSize(int size) {
@@ -16,7 +15,7 @@ public class Set {
 
     public boolean contains(String key) {
         for (int i = 0; i < size; i++) {
-            if (set[i].compareTo(key) == 0) return true;
+            if (elements[i].compareTo(key) == 0) return true;
         }
         return false;
     }
