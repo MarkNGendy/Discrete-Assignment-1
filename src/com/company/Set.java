@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.Scanner;
+
 public class Set {
     String[] elements;
     int size;
@@ -32,7 +34,7 @@ public class Set {
                 Union.setSize(Union.size+1);
             }
         }
-        Main.printSet(Union);
+        printSet(Union);
     }
 
     public static void Intersection (Set s1 , Set s2){
@@ -44,6 +46,28 @@ public class Set {
                 Intersection.setSize(Intersection.size+1);
             }
         }
-        Main.printSet(Intersection);
+        printSet(Intersection);
+    }
+
+
+    public static Set readSet(Set set) {
+        Scanner in = new Scanner(System.in);
+        set.setSize(0);
+        for (int i = 0; i < set.elements.length; i++) {
+            String s = in.next();
+            if (!set.contains(s)) {
+                set.elements[set.size] = s;
+                set.setSize(set.size + 1);
+            }
+        }
+        return set;
+    }
+
+    public static void printSet(Set set) {
+        System.out.print("\n" +  "{ ");
+        for (int i = 0; i < (set.size - 1); i++) {
+            System.out.print(set.elements[i] + " , ");
+        }
+        System.out.print(set.elements[set.size - 1] + " }");
     }
 }

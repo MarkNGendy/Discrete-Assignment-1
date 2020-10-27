@@ -15,28 +15,8 @@ public class Main {
             System.out.println("Please enter set size\n");
             int length = in.nextInt();
             sets[i] = new Set(length);
-            sets[i] = readSet(sets[i]);
+            sets[i] = Set.readSet(sets[i]);
         }
     }
 
-    public static Set readSet(Set set) {
-        Scanner in = new Scanner(System.in);
-        set.setSize(0);
-        for (int i = 0; i < set.elements.length; i++) {
-            String s = in.next();
-            if (!set.contains(s)) {
-                set.elements[set.size] = s;
-                set.setSize(set.size + 1);
-            }
-        }
-        return set;
-    }
-
-    public static void printSet(Set set) {
-        System.out.print("\n" +  "{ ");
-        for (int i = 0; i < (set.size - 1); i++) {
-            System.out.print(set.elements[i] + " , ");
-        }
-        System.out.print(set.elements[set.size - 1] + " }");
-    }
 }
