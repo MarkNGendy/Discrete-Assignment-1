@@ -21,32 +21,43 @@ public class Set {
         }
         return false;
     }
-    public static void Union(Set s1 , Set s2){
-        Set Union = new Set(s1.size + s2.size);
-        Union.setSize(0);
-        for (int i=0 ; i<s1.size ; i++){
-            Union.elements[i] = s1.elements[i];
-            Union.setSize(Union.size+1);
+    public static void union(Set s1 , Set s2){
+        Set union = new Set(s1.size + s2.size);
+        union.setSize(0);
+        for (int i = 0; i < s1.size; i++){
+            union.elements[i] = s1.elements[i];
+            union.setSize(union.size + 1);
         }
-        for (int i=0 ; i<s2.size ; i++){
-            if (!Union.contains(s2.elements[i])){
-                Union.elements[Union.size] = s2.elements[i];
-                Union.setSize(Union.size+1);
+        for (int i = 0; i < s2.size; i++){
+            if (!union.contains(s2.elements[i])){
+                union.elements[union.size] = s2.elements[i];
+                union.setSize(union.size + 1);
             }
         }
-        printSet(Union);
+        printSet(union);
     }
 
-    public static void Intersection (Set s1 , Set s2){
-        Set Intersection = new Set(s2.size);
-        Intersection.setSize(0);
-        for (int i=0 ; i<s2.size ; i++){
+    public static void intersection(Set s1, Set s2){
+        Set intersection = new Set(s2.size);
+        intersection.setSize(0);
+        for (int i = 0; i < s2.size; i++){
             if (s1.contains(s2.elements[i])){
-                Intersection.elements[Intersection.size] = s2.elements[i];
-                Intersection.setSize(Intersection.size+1);
+                intersection.elements[intersection.size] = s2.elements[i];
+                intersection.setSize(intersection.size + 1);
             }
         }
-        printSet(Intersection);
+        printSet(intersection);
+    }
+
+    public static void complement(Set universe, Set set) {
+        Set complement = new Set(universe.size);
+        for (int i = 0; i < universe.size; i++) {
+            if (!(set.contains(universe.elements[i]))) {
+                set.elements[set.size] = universe.elements[i];
+                set.setSize(set.size + 1);
+            }
+        }
+        printSet(complement);
     }
 
 
