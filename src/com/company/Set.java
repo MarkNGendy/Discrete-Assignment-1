@@ -53,19 +53,24 @@ public class Set {
         Set complement = new Set(universe.size);
         for (int i = 0; i < universe.size; i++) {
             if (!(set.contains(universe.elements[i]))) {
-                set.elements[set.size] = universe.elements[i];
-                set.setSize(set.size + 1);
+                complement.elements[complement.size] = universe.elements[i];
+                complement.setSize(complement.size + 1);
             }
         }
         printSet(complement);
     }
 
 
-    public static Set readSet(Set set) {
+    public static Set readSet(Set set, Set universe) {
         Scanner in = new Scanner(System.in);
         set.setSize(0);
         for (int i = 0; i < set.elements.length; i++) {
+            System.out.println("Please enter the element number " + (i + 1));
             String s = in.next();
+            while (!universe.contains(s)) {
+                System.out.println("Please enter elements that belong to universe");
+                s = in.next();
+            }
             if (!set.contains(s)) {
                 set.elements[set.size] = s;
                 set.setSize(set.size + 1);
@@ -79,6 +84,6 @@ public class Set {
         for (int i = 0; i < (set.size - 1); i++) {
             System.out.print(set.elements[i] + " , ");
         }
-        System.out.print(set.elements[set.size - 1] + " }");
+        System.out.print(set.elements[set.size - 1] + " }\n");
     }
 }
