@@ -58,7 +58,7 @@ public class Main {
                 case 3:
                     System.out.println("Enter the number of a set or zero for universe");
                     int set1 = in.nextInt();
-                    while (set1 >= sets.length || set1 < 1) {
+                    while (set1 >= sets.length || set1 < 0) {
                         System.out.println("Please enter a number between 0 & " + (sets.length - 1));
                         set1 = in.nextInt();
                     }
@@ -74,13 +74,13 @@ public class Main {
         Point choices = new Point();
         System.out.println("Enter the number of first set or zero for universe" );
         int set1 = in.nextInt();
-        while (set1 >= sets.length || set1 < 1) {
+        while (set1 >= sets.length || set1 < 0) {
             System.out.println("Please enter a number between 0 & " + (sets.length - 1));
             set1 = in.nextInt();
         }
         System.out.println("Enter the number of second set or zero for universe");
         int set2 = in.nextInt();
-        while (set2 >= sets.length || set2 < 1) {
+        while (set2 >= sets.length || set2 < 0) {
             System.out.println("Please enter a number between 0 & " + (sets.length - 1));
             set2 = in.nextInt();
         }

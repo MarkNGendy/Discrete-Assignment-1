@@ -80,6 +80,10 @@ public class Set {
     }
 
     public static void printSet(Set set) {
+        if (set.size == 0) {
+            System.out.println("Null");
+            return;
+        }
         System.out.print("\n" +  "{ ");
         for (int i = 0; i < (set.size - 1); i++) {
             System.out.print(set.elements[i] + " , ");
