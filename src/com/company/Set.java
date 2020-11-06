@@ -24,6 +24,13 @@ public class Set {
     public static void union(Set s1 , Set s2){
         Set union = new Set(s1.size + s2.size);
         union.setSize(0);
+        if(s1.size == 0) {
+            printSet(s2);
+            return;
+        } else if (s2.size == 0) {
+            printSet(s1);
+            return;
+        }
         for (int i = 0; i < s1.size; i++){
             union.elements[i] = s1.elements[i];
             union.setSize(union.size + 1);
@@ -38,6 +45,10 @@ public class Set {
     }
 
     public static void intersection(Set s1, Set s2){
+        if(s1.size == 0 || s2.size == 0) {
+            printSet(new Set(0));
+            return;
+        }
         Set intersection = new Set(s2.size);
         intersection.setSize(0);
         for (int i = 0; i < s2.size; i++){
@@ -51,6 +62,13 @@ public class Set {
 
     public static void complement(Set universe, Set set) {
         Set complement = new Set(universe.size);
+        if (set.size == universe.size) {
+            printSet(new Set(0));
+            return;
+        } else if (set.size == 0) {
+            printSet(universe);
+            return;
+        }
         for (int i = 0; i < universe.size; i++) {
             if (!(set.contains(universe.elements[i]))) {
                 complement.elements[complement.size] = universe.elements[i];

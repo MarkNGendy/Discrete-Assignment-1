@@ -26,7 +26,7 @@ public class Main {
         for (int i = 1; i < noOfSets + 1; i++) {
             System.out.println("Please enter set " + i + " size");
             int length = in.nextInt();
-            while (length > universe.size || length < 1) {
+            while (length > universe.size || length < 0) {
                 System.out.println("Please enter valid size smaller than universe size");
                 length = in.nextInt();
             }
